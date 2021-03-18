@@ -71,8 +71,8 @@ export default class NwcTasksFormsWebPart extends BaseClientSideWebPart<INwcTask
   }
 
   private _needsConfiguration(): boolean {
-    return !this.properties.tenantName ||
-      this.properties.tenantName.length === 0;
+    return !this.properties.tenantName || this.properties.tenantName.length === 0
+      || !this.properties.clientId || this.properties.tenantName.length === 0;
   }
 
 }
