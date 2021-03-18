@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/nwcTasksForms/NwcTasksFormsWebPart.js",
+      "manifest": "./src/webparts/nwcTasksForms/NwcTasksFormsWebPart.manifest.json",
+      "outputPath": "./dist/nwc-tasks-forms-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "NwcTasksFormsWebPartStrings": "webparts/nwcTasksForms/loc/{locale}.js"
+  }
+}

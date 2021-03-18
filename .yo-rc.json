@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "onprem",
+    "version": "1.11.0",
+    "libraryName": "nwc-tasks-forms",
+    "libraryId": "4cc1a9b3-bbe0-4db5-b97f-433c5562b052",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
