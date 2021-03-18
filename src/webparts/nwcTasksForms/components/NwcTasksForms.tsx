@@ -289,7 +289,6 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
           }
         })
         .then(json => {
-          console.log(json);
           if (json.tasks) {
             this.state = {
               ...this.state,
@@ -342,7 +341,6 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
           }
         })
         .then(json => {
-          console.log(json);
           if (json.forms) {
             this.state = {
               ...this.state,
