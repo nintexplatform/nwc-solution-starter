@@ -141,8 +141,18 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         isSortedDescending: false,
         data: 'string',
         onRender: (item) => {
+          //get the displayname from form - or - from the workflow, if the formname is empty
+          let displayText = '';
+
+          if (item.name && item.name != '') {
+            displayText = item.name;
+          }
+          else {
+            displayText = item.workflow.name;
+          }
+
           if (item.urls) {
-            return <a target='_blank' href={item.urls.formUrl}>{item.name}</a>;
+            return <a target='_blank' href={item.urls.formUrl}>{displayText}</a>;
           } else {
             return <span>{item.name}</span>;
           }
