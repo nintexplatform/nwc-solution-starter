@@ -32,8 +32,8 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         key: 'column1',
         name: 'Name',
         fieldName: 'name',
-        minWidth: 210,
-        maxWidth: 350,
+        minWidth: 150,
+        maxWidth: 200,
         isRowHeader: true,
         isResizable: true,
         isSorted: false,
@@ -45,8 +45,8 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         key: 'column2',
         name: 'Description',
         fieldName: 'description',
-        minWidth: 210,
-        maxWidth: 350,
+        minWidth: 150,
+        maxWidth: 200,
         isRowHeader: true,
         isResizable: true,
         isSorted: false,
@@ -58,8 +58,8 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         key: 'column3',
         name: 'Workflow name',
         fieldName: 'workflow',
-        minWidth: 210,
-        maxWidth: 350,
+        minWidth: 150,
+        maxWidth: 200,
         isRowHeader: true,
         isResizable: true,
         isSorted: false,
@@ -71,26 +71,43 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         key: 'column4',
         name: 'Status',
         fieldName: 'status',
-        minWidth: 210,
-        maxWidth: 350,
+        minWidth: 100,
+        maxWidth: 120,
         isRowHeader: true,
         isResizable: true,
         isSorted: false,
         isSortedDescending: false,
         data: 'string',
+        onRender: (item) => {
+          if (item.status) {
+            // uppercase for 1st letter
+            let displayText: string = item.status;
+            displayText = displayText.charAt(0).toUpperCase() + displayText.slice(1);
+            return <span>{displayText}</span>;
+          } else {
+            return <span></span>;
+          }
+        },
         onColumnClick: this._onTasksColumnClick
       },
       {
         key: 'column5',
-        name: 'Date created (TODO)',
-        fieldName: 'id',
+        name: 'Date created',
+        fieldName: 'created',
         minWidth: 210,
         maxWidth: 350,
         isRowHeader: true,
         isResizable: true,
         isSorted: false,
         isSortedDescending: false,
-        data: 'string',
+        data: 'date',
+        onRender: (item) => {
+          if (item.created) {
+            return <span>{getFormattedLocalDateTime(item.created)}</span>;
+          } else {
+            return <span></span>;
+          }
+        },
         onColumnClick: this._onTasksColumnClick
       },
       {
@@ -105,7 +122,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         isSortedDescending: false,
         data: 'date',
         onRender: (item) => {
-          if (item.lastModified) {
+          if (item.dueDate) {
             return <span>{getFormattedLocalDateTime(item.dueDate)}</span>;
           } else {
             return <span></span>;
@@ -114,16 +131,21 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         onColumnClick: this._onTasksColumnClick
       },
       {
-        key: 'column6',
-        name: 'Outcome (TODO)',
-        fieldName: 'id',
-        minWidth: 210,
-        maxWidth: 350,
+        key: 'column7',
+        name: 'Task form',
+        fieldName: 'urls',
+        minWidth: 150,
+        maxWidth: 200,
         isRowHeader: true,
         isResizable: true,
         isSorted: false,
         isSortedDescending: false,
         data: 'string',
+        onRender: (item) => {
+          if ((item.urls) && (item.urls.formUrl)) {
+            return <a target='_blank' href={item.urls.formUrl}>View Task Form</a>;
+          }
+        },
         onColumnClick: this._onTasksColumnClick
       }
     ];
@@ -488,8 +510,15 @@ function getFormattedLocalDateTime(inputDateTime: string): string {
   const year: string = localDateTime.toLocaleDateString('en-US', { year: 'numeric' });
   const formattedDate: string = (day + ' ' + month + ' ' + year);
 
-  const hours: number = localDateTime.getUTCHours();
-  const mins: number = localDateTime.getUTCMinutes();
+  let hours: string = localDateTime.getUTCHours().toString();
+  if (hours.length == 1) {
+    hours = '0' + hours;
+  }
+
+  let mins: string = localDateTime.getUTCMinutes().toString();
+  if (mins.length == 1) {
+    mins = '0' + mins;
+  }
   const morningAfternoon: string = localDateTime.getUTCHours() >= 12 ? 'PM' : 'AM';
   const formattedTime: string = (hours + ':' + mins + ' ' + morningAfternoon);
 
