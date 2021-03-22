@@ -3,7 +3,7 @@
   "solution": {
     "name": "Nintex Solution Starter - NWC Tasks and Forms",
     "id": "4cc1a9b3-bbe0-4db5-b97f-433c5562b052",
-    "version": "1.0.0.15"
+    "version": "1.0.0.17"
   },
   "paths": {
     "zippedPackage": "solution/nwc-tasks-forms.sppkg"
