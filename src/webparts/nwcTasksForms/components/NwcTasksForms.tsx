@@ -141,13 +141,12 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         isSortedDescending: false,
         data: 'string',
         onRender: (item) => {
-          //get the displayname from form - or - from the workflow, if the formname is empty
-          let displayText = '';
+          // get the displayname from form - or - from the workflow, if the formname is empty
+          let displayText: string = '';
 
-          if (item.name && item.name != '') {
+          if (item.name && item.name !== '') {
             displayText = item.name;
-          }
-          else {
+          } else {
             displayText = item.workflow.name;
           }
 
@@ -256,7 +255,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
 
     const isAuthenticated: boolean = await this.auth0.isAuthenticated();
     if (!isAuthenticated) {
-      this.auth0.loginWithPopup();
+      await this.auth0.loginWithPopup();
     }
   }
 
