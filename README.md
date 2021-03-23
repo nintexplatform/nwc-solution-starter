@@ -4,7 +4,12 @@
 
 DEBUG environment ;
 * Node must be 6.x
-* Use 'nodist' to switch node versions
+* Use 'nodist' to switch node versions on Windows, use the 'n' command when working with node on a Mac
+* Example:
+```
+$ npm install -g n 
+$ n 6.17.1
+```
 * Check here for latest version :  https://nodejs.org/dist/latest-v6.x/
 * This is to support SP2016 compatability - and SPFX 1.1
 
