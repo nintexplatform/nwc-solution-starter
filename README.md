@@ -35,7 +35,8 @@ Need to make a Document Library within AppCatalog ;
 - /sites/appcatalog/CDN
 
 Within this library, create a folder "nwctasksforms" ;
-- Deploy the JS files from /dist
+- Deploy the JS files from /temp/deploy
+- NOT from /dist
 
 This is to allow for cross-support with SP2016.
 
