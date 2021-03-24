@@ -31,15 +31,29 @@ gulp package-solution --ship
 
 ## Deployment - existing codebase - to support SP2016, SP2019, SPO ;
 
-Need to make a Document Library within AppCatalog ;
+##### Upload SPPKG to AppCatalog
+- Packaged file after build+package - located in /sharepoint/solution
+- Update SPPKG file to AppCatalog site, within 'Apps for SharePoint'
+
+##### Need to make a [Document Library] within AppCatalog ;
 - /sites/appcatalog/CDN
 
-Within this library, create a folder "nwctasksforms" ;
-- Deploy the JS files from /dist
+##### Within this library, create a folder "nwctasksforms" ;
+- Upload all files from the folder : /temp/deploy
+- This is typically 1 JSON, 3 JS files
+- NOT from /dist
+- This is to allow for cross-support with SP2016.
 
-This is to allow for cross-support with SP2016.
+## Add to Site ;
 
-## Deployment - to SPO (only) ;
+##### Add An App
+- Within a site collection, choose "Add An App"
+- WebPart will now be available in the gallery
+- Add the WebPart to a [modern] page - and update the properties/settings
+
+
+
+## Update to single package, for deployment to SPO only (OPTIONAL) ;
 
 - If you are using SharePoint Online (only), then you can update to the newest/latest SPFX
 - Also, this allows for a single file SPPKG to deploy
@@ -91,8 +105,14 @@ gulp build
 gulp bundle --ship
 gulp package-solution --ship
 ```
-##### Deployment
+##### Upload SPPKG to AppCatalog
+- Packaged file after build+package - located in /sharepoint/solution
+- Update SPPKG file to AppCatalog site, within 'Apps for SharePoint'
+- No need for other CDN files/folders, etc
 
-- Can now deploy the SPPKG file, only.
-- Within a site collection, choose "Add An App"
-- WebPart will now be available in the gallery
+## Troubleshooting ;
+
+##### Update Version
+
+- If making any changes or edits to files, and then re-build, make sure to update the version number
+- Within file package-solution.json
