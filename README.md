@@ -65,7 +65,7 @@ gulp package-solution --ship
 ```
 "@microsoft/sp-core-library": "~1.11.0",
 "@microsoft/sp-lodash-subset": "~1.11.0",
-"@microsoft/sp-webpart-base": "~1.11.0",
+"@microsoft/sp-webpart-base": "~1.11.0"
 "react": "16.9.0",            (was 15.4.2)
 "react-dom": "16.9.0"         (was 15.4.2)
 ```
@@ -80,6 +80,8 @@ gulp package-solution --ship
 npm i
 npm i @microsoft/sp-tslint-rules
 npm i @microsoft/rush-stack-compiler-3.2
+npm install gulp@3.9.1 --save-dev
+npm audit fix
 ```
 
 ##### Update the package to include all JS and JSON
