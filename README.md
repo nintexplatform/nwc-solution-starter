@@ -51,7 +51,9 @@ gulp package-solution --ship
 - WebPart will now be available in the gallery
 - Add the WebPart to a [modern] page - and update the properties/settings
 
-## Deployment - to SPO (only) ;
+
+
+## Update to single package, for deployment to SPO only (OPTIONAL) ;
 
 - If you are using SharePoint Online (only), then you can update to the newest/latest SPFX
 - Also, this allows for a single file SPPKG to deploy
