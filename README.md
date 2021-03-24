@@ -44,6 +44,13 @@ gulp package-solution --ship
 - NOT from /dist
 - This is to allow for cross-support with SP2016.
 
+## Add to Site ;
+
+##### Add An App
+- Within a site collection, choose "Add An App"
+- WebPart will now be available in the gallery
+- Add the WebPart to a [modern] page - and update the properties/settings
+
 ## Deployment - to SPO (only) ;
 
 - If you are using SharePoint Online (only), then you can update to the newest/latest SPFX
@@ -96,11 +103,10 @@ gulp build
 gulp bundle --ship
 gulp package-solution --ship
 ```
-##### Deployment
-
-- Can now deploy the SPPKG file, only.
-- Within a site collection, choose "Add An App"
-- WebPart will now be available in the gallery
+##### Upload SPPKG to AppCatalog
+- Packaged file after build+package - located in /sharepoint/solution
+- Update SPPKG file to AppCatalog site, within 'Apps for SharePoint'
+- No need for other CDN files/folders, etc
 
 ## Troubleshooting ;
 
