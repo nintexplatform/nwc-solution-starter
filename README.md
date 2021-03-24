@@ -63,9 +63,9 @@ gulp package-solution --ship
 - Within file package.json
 - Change the references for SPFX to the latest version (these were set at 1.1.0)
 ```
-"@microsoft/sp-core-library": "~1.12.0",
-"@microsoft/sp-lodash-subset": "~1.12.0",
-"@microsoft/sp-webpart-base": "~1.12.0",
+"@microsoft/sp-core-library": "~1.11.0",
+"@microsoft/sp-lodash-subset": "~1.11.0",
+"@microsoft/sp-webpart-base": "~1.11.0",
 "react": "16.9.0",            (was 15.4.2)
 "react-dom": "16.9.0"         (was 15.4.2)
 ```
