@@ -52,9 +52,9 @@ We recommend using a code editor that provides a console, such as [Visual Studio
 
 _Note:_ If you are supporting SharePoint on-premesis, you must use Node v6. Use NODIST (or 'n' if developing on a Mac) to switch Node versions. Check [nodejs.org](https://nodejs.org/dist/latest-v6.x/) for the latest v6 version.
 
-When building for the first time, you must first create and trust a developer certificate.
+When debugging for the first time, you must first create and trust a developer certificate.
 1. In the console, type the following commands, each command followed by the **Enter** key.
-   1. `gulp trust-dev-cert1
+   1. `gulp trust-dev-cert`
    1. `set NODE_NO_HTTP2=1 && gulp serve`
 
 You only need to run these commands once. 
