@@ -2,7 +2,7 @@
 
 There are two ways you can configure and deploy your package:
 
-  - Support both SharePoint Online and SharePoint on-premesis 
+  - Support both SharePoint Online and SharePoint on-premises 
   - Support SharePoint Online only.
   
 If you want to support both SharePoint Online and SharePoint on-premesis:
