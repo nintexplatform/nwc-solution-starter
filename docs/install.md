@@ -1,7 +1,7 @@
 # Install the web part in your environment
 To install the web part in your SharePoint environment, add the app to your SharePoint App Catalogue and upload the CDN files.
 
-_Note:_ To complete the installation, you must have SharePoint Administration Centre privileges.
+_Note:_ To complete the installation, you must have SharePoint Admin Centre privileges.
 
 ## Step 1: Download or build the package
 Before you can install the app, you must first either:
