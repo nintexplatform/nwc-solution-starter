@@ -120,6 +120,7 @@ gulp package-solution --ship
 
 ##### Package.json (file contents) - for SPFX 1.11 (SharePoint Online)
 
+```
 {
   "name": "nwc-tasks-forms",
   "version": "0.0.1",
@@ -161,3 +162,4 @@ gulp package-solution --ship
     "@types/es6-promise": "0.0.33"
   }
 }
+```
