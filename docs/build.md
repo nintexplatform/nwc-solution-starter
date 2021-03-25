@@ -8,7 +8,7 @@ There are two ways you can configure and deploy your package:
 If you want to support both SharePoint Online and SharePoint on-premesis:
 1. Configure your App Catalog location.
 1. Build your package.
-1. Install your package and upload the additional supporting files. See [Install your package](./install.md).
+1. Install your package **and upload the additional supporting files**. See [Install your package](./install.md).
 
 If you plan to only support SharePoint online:
 1. Configure the package for SharePoint Online only.
