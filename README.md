@@ -53,33 +53,34 @@ gulp package-solution --ship
 
 
 
-## Update to single package, for deployment to SPO only (OPTIONAL) ;
+## Update SPFX for SPOnline - for deployment of single SPPKG - to SPO only (OPTIONAL) ;
 
 - If you are using SharePoint Online (only), then you can update to the newest/latest SPFX
 - Also, this allows for a single file SPPKG to deploy
-
-##### Update version references
-
-- Within file package.json
-- Change the references for SPFX to the latest version (these were set at 1.1.0)
-```
-"@microsoft/sp-core-library": "~1.12.0",
-"@microsoft/sp-lodash-subset": "~1.12.0",
-"@microsoft/sp-webpart-base": "~1.12.0",
-"react": "16.9.0",            (was 15.4.2)
-"react-dom": "16.9.0"         (was 15.4.2)
-```
 
 ##### Node version
 
 - Use NVM or NODIST to use Node v10 (currently 10.24.0)
 - This will be ‘n’ if using a Mac computer
 
+##### Update version references
+
+- Within file package.json
+- Change the references for SPFX to the latest version (these were set at 1.1.0 - change to 1.11.0)
+```
+"@microsoft/sp-core-library": "~1.11.0",
+"@microsoft/sp-lodash-subset": "~1.11.0",
+"@microsoft/sp-webpart-base": "~1.11.0",
+```
+- Update these packages within console ;
+```
+npm i @microsoft/rush-stack-compiler-3.2
+```
+
 ##### Get full packages
 ```
 npm i
-npm i @microsoft/sp-tslint-rules
-npm i @microsoft/rush-stack-compiler-3.2
+npm audit fix
 ```
 
 ##### Update the package to include all JS and JSON
@@ -116,3 +117,47 @@ gulp package-solution --ship
 
 - If making any changes or edits to files, and then re-build, make sure to update the version number
 - Within file package-solution.json
+
+##### Package.json (file contents) - for SPFX 1.11 (SharePoint Online)
+
+{
+  "name": "nwc-tasks-forms",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.14.0",
+    "@microsoft/rush-stack-compiler-3.2": "^0.10.40",
+    "@microsoft/sp-core-library": "~1.11.0",
+    "@microsoft/sp-lodash-subset": "~1.11.0",
+    "@microsoft/sp-office-ui-fabric-core": "~1.4.0-0",
+    "@microsoft/sp-webpart-base": "~1.11.0",
+    "office-ui-fabric-react": "^1.14.3",
+    "react": "15.4.2",
+    "react-dom": "15.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "0.14.46",
+    "@types/react-dom": "0.14.18",
+    "@types/react-addons-shallow-compare": "0.14.17",
+    "@types/react-addons-update": "0.14.14",
+    "@types/react-addons-test-utils": "0.14.15",
+    "@microsoft/sp-build-web": "~1.11.0",
+    "@microsoft/sp-module-interfaces": "~1.11.0",
+    "@microsoft/sp-webpart-workbench": "~1.11.0",
+    "gulp": "~3.9.1",
+    "@types/chai": "3.4.34",
+    "@types/mocha": "2.2.38",
+    "ajv": "~5.2.2",
+    "@types/webpack-env": "1.13.1",
+    "@types/es6-promise": "0.0.33"
+  }
+}
