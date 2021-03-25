@@ -10,7 +10,7 @@ Before you can install the app, you must first either:
 
 ## Step 2: Install the package in SharePoint
 In your SharePoint environment:
-1. Navigate into the **App Catalogue** of the SharePoint Admin Centre.
+1. Navigate into the **App Catalog** of the SharePoint Admin Centre.
 1. Click **Apps for SharePoint**.
 1. Click the **Files** tab.
 1. Click **Upload Document**.
