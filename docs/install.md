@@ -1,5 +1,5 @@
-# Install the web part in your environment
-To install the web part in your SharePoint environment, add the app to your SharePoint App Catalogue and upload the CDN files.
+# Install the Nintex solution starter in your environment
+To install the Nintex Solution Starter in your SharePoint environment, add the app to your SharePoint App Catalogue and upload the CDN files.
 
 _Note:_ To complete the installation, you must have SharePoint Admin Centre privileges.
 
@@ -17,7 +17,7 @@ In your SharePoint environment:
 1. Select the package you have downloaded or built to upload.
 1. If you want all sites in your organization to be able to immediately access the app, select **Make this solution available to all sites**.
 
-   Deploying to all sites allows SharePoint users to add the app directly to pages as a web part.  
+   Deploying to all sites allows SharePoint users to add the web part directly to pages.  
    If you do not deploy to all sites, SharePoint Site Administrators must add the app to their sites individually in order to add it to site pages.
 1. Click **Deploy**.
 
