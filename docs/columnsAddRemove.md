@@ -180,6 +180,6 @@ To add a column with a calculated value:
         },
         onColumnClick: this._onTasksColumnClick
       },
-	  ```
+```
 1. Save the file.
 1. [Rebuild](./build.md) your package.
