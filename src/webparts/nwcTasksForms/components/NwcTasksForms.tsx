@@ -511,12 +511,12 @@ function getFormattedLocalDateTime(inputDateTime: string): string {
   const formattedDate: string = (day + ' ' + month + ' ' + year);
 
   let hours: string = localDateTime.getUTCHours().toString();
-  if (hours.length == 1) {
+  if (hours.length === 1) {
     hours = '0' + hours;
   }
 
   let mins: string = localDateTime.getUTCMinutes().toString();
-  if (mins.length == 1) {
+  if (mins.length === 1) {
     mins = '0' + mins;
   }
   const morningAfternoon: string = localDateTime.getUTCHours() >= 12 ? 'PM' : 'AM';
