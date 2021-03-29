@@ -28,8 +28,8 @@ After you customize your web part, you should [rebuild](./build.md) it for your 
 |isSorted| Whether the column data is sorted. You should not edit this field.|
 |isSortedDescending| Whether the column data is sorted in descending order. You should not edit this field.|
 |data| The data type of this column. This must match the data type of the fieldName as given in the model.|
-|isPadded| You should not edit this field.|
-|onRender| You should not edit this field.|
+|isPadded| Used to control the visual padding on a column. You should not edit this field.|
+|onRender| Used to control how a value is displayed when parsing data or creating a calculated field.|
 |onColumnClick| The function to perform when this column is clicked. You should not edit this field.|
 
 When editing column definition fields:
