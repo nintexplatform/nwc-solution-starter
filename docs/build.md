@@ -86,9 +86,9 @@ The package for SharePoint Online can make use of more recent versions of framew
 1. Find and update the following `@microsoft` values:
 
 	```javascript
-		"@microsoft/sp-core-library": "~1.12.0",
-		"@microsoft/sp-lodash-subset": "~1.12.0",
-		"@microsoft/sp-webpart-base": "~1.12.0",
+		"@microsoft/sp-core-library": "~1.11.0.0",
+		"@microsoft/sp-lodash-subset": "~1.11.0.0",
+		"@microsoft/sp-webpart-base": "~1.11.0.0",
 	```
 1. Find and update the following `react` values:
 
