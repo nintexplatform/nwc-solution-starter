@@ -26,7 +26,7 @@ To reorder your columns:
         onColumnClick: this._onTasksColumnClick
       },
 ```
-1. Either right-click and select **Cut**, or press **control-X** to cut your selection.
+1. Either right-click and select **Cut**, or press **Ctrl-X** to cut your selection.
 1. Scroll to where you want the column to be. 
 
    Make sure you are still within the square brackets `[`  `]` of the Task or Forms column definitions.
