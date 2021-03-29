@@ -52,7 +52,7 @@ We recommend using a code editor that provides a console, such as [Visual Studio
 
 _Note:_ If you are supporting SharePoint on-premesis, you must use Node v6. Use NODIST (or 'n' if developing on a Mac) to switch Node versions. Check [nodejs.org](https://nodejs.org/dist/latest-v6.x/) for the latest v6 version.
 
-When debugging for the first time, you must first create and trust a developer certificate.
+When debugging the package for the first time, you must first create and trust a developer certificate.
 1. In the console, type the following commands, each command followed by the **Enter** key.
    1. `gulp trust-dev-cert`
    1. `set NODE_NO_HTTP2=1 && gulp serve`
@@ -127,7 +127,7 @@ Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
 	```
 
 ### Reset the CDN path
-Because we have configured the package to contain all JSON and javascript, we can remove the CDN.
+Because you have configured the package to contain all JSON and javascript, you can remove the CDN.
 
 1. Open the **write-manifests.json** file in the **/config** folder of the repository.
 1. Find the line that starts with `"cdnBasePath"`.
