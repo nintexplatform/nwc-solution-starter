@@ -148,7 +148,7 @@ To add a column with a field from the data model:
 
 ### Add a column with a calculated value
 
-_Note:_ Adding calculated fields requires some coding experience and should only be attempted by a developer.
+_Note:_ Adding calculated fields requires creating a function. We recommend developer or coding experience for adding calculated fields.
 
 To add a column with a calculated value:
 
