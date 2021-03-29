@@ -7,7 +7,7 @@ To get started, you should first build and install the basic app, and add the we
 1. [Install the app in your SharePoint environment](./install.md).
 1. [Add the web part to a page](./addToPage.md).
 
-Once you have successfully installed and added the web part, you may want to customise the columns and fields. You should read the [basic customisation guidelines](./customize.md) first.
+Once you have successfully installed and added the web part, you may want to customize the columns and fields. See the [basic customisation guidelines](./customize.md).
 
 Then, there are some more specific guides on how to:  
   - [Change a column heading or size](./columnsRenameResize.md).
