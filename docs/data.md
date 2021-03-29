@@ -2,7 +2,7 @@
 
 Use the following data models to add new columns to your tasks and forms lists. You can find the files for these data models in **/src/models/**.
 
-For more information on adding new columns, see [Add and remove columns](./columsAddRemove.md).
+For more information on adding new columns, see [Add and remove columns](./columnsAddRemove.md).
 
 For more information on where to find the column definitions and where to cuztomize your columns, see [Customizing your columns](./customize.md).
 
