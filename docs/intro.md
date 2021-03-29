@@ -3,7 +3,7 @@
 This documentation will guide you through building and installing the Nintex Tasks and Forms app in SharePoint Online, or SharePoint on-premesis, as well as some simple customization.
 
 To get started, you should first build and install the basic app, and add the web part to a page:
-1. [Build the app](./build).
+1. [Build the app](./build.md).
 1. [Install the app in your SharePoint environment](./install.md).
 1. [Add the web part to a page](./addToPage.md).
 
