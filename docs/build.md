@@ -6,14 +6,45 @@ There are two ways you can configure and deploy your package:
   - Support SharePoint Online only.
   
 If you want to support both SharePoint Online and SharePoint on-premesis:
+1. Add your developer details.
 1. Configure your App Catalog location.
 1. Build your package.
 1. Install your package **and upload the additional supporting files**. See [Install your package](./install.md).
 
 If you plan to only support SharePoint online:
+1. Add your developer details.
 1. Configure the package for SharePoint Online only.
 1. Build your package.
 1. Install your package. You will not need to upload additional files. See [Install your package](./install.md).
+
+## Add your developer details
+Before you build your package, add the details of your privacy policy, terms of use, and Microsoft Partner Network Id to the package details.
+
+1. In the project  you have downloaded from the repository, navigate to the **/config** folder.
+1. Open the **package-solution.json** file.
+2. Look for the section that starts with `"developer"`.
+   
+   If it's not there, copy and paste the below code before the `"paths"` section:
+   
+   ```javascript
+   "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+   ```
+2. Add your details inside the quotation marks for each field described below, and save the file.
+
+   
+|Field|Description|
+|-----|-----------|
+|name|Your organization or developer's name.|
+|websiteUrl|The organization website. |
+|privacyUrl|The URL of your privacy policy for users of your SharePoint app.|
+|termsOfUseUrl|The URL of your terms of use for users of your SharePoint app.|
+|mpnId|Your Microsoft Partner Network ID.|
 
 ## Configure the App Catalog location
 
@@ -58,6 +89,8 @@ When debugging the package for the first time, you must first create and trust a
    1. `set NODE_NO_HTTP2=1 && gulp serve`
 
 You only need to run these commands once. 
+
+For more help getting started building and debugging SharePoint packages, see [Microsoft SharePoint developer tutorials](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment).
 
 To build your package:
 1. In the console, type the following commands, each command followed by the **Enter** key.
