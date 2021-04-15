@@ -5,17 +5,18 @@ There are two ways you can configure and deploy your package:
   - Support both SharePoint Online and SharePoint on-premises 
   - Support SharePoint Online only.
   
-If you want to support both SharePoint Online and SharePoint on-premesis:
+### If you want to support both SharePoint Online and SharePoint on-premesis:
 1. Add your developer details.
 1. Configure your App Catalog location.
 1. Build your package.
 1. Install your package **and upload the additional supporting files**. See [Install your package](./install.md).
 
-If you plan to only support SharePoint online:
+### If you plan to only support SharePoint Online:
 1. Add your developer details.
 1. Configure the package for SharePoint Online only.
 1. Build your package.
 1. Install your package. You will not need to upload additional files. See [Install your package](./install.md).
+
 
 ## Add your developer details
 Before you build your package, add the details of your privacy policy, terms of use, and Microsoft Partner Network Id to the package details.
@@ -50,7 +51,7 @@ Before you build your package, add the details of your privacy policy, terms of 
 
 _Note:_ If you plan to configure your package for SharePoint Online only, you do not need to perform this step.
 
-Before you build your file, check whether your SharePoint environment is using the default location for the App Catalog.
+Before you build your package file, check whether your SharePoint environment is using the default location for the App Catalog.
 
 In your SharePoint environment:
 1. Navigate to the App Catalog in your browser and examine the URL:
@@ -103,9 +104,9 @@ To build your package:
 ## Configure your package for SharePoint Online only
 If you are only using SharePoint online, you can configure the package to bundle all required files into one upload to make your installation process much simpler.
 
-_Note:_ If you need to support both SharePoint Online and SharePoint on-premesis, you must use the standard build instructions.
+_Note:_ If you need to support both SharePoint Online and SharePoint on-premesis, you must use the standard build instructions above.
 
-To prepare your package for SharePoint online, you will:
+### To prepare your package for SharePoint online, you will:
   - Configure the package to use more recent frameworks,  libraries and Node version.
   - Retrieve the additional files that would normally be uploaded to a CDN.
   - Configure the package to combine all JSON and javascript files into the package rather than using a CDN.
@@ -126,8 +127,8 @@ The package for SharePoint Online can make use of more recent versions of framew
 1. Find and update the following `react` values:
 
 	```javascript	
-		"react": "16.9.0",               
-		"react-dom": "16.9.0"        
+		"react": "15.4.2",               
+		"react-dom": "15.4.2"        
 	```
 
 ### Switch your version of Node to v10
@@ -136,8 +137,9 @@ Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
 ### Retrieve the content to be combined into the package
 1. In the console, type the following commands, each command followed by the **Enter** key.
    1. `npm i`
-   1. `npm i @microsoft/sp-tslint-rules`
-   1. `npm i @microsoft/rush-stack-compiler-3.2`
+   2. `npm audit fix`
+   3. `npm i @microsoft/sp-tslint-rules`
+   4. `npm i @microsoft/rush-stack-compiler-3.2`
 
 ### Configure the package to combine all JSON and javascript
 
@@ -173,5 +175,15 @@ Because you have configured the package to contain all JSON and javascript, you 
     }
     ```
 
+### Build your package
+Once you have prepared your manifest file, you can build the package.
 
+We recommend using a code editor that provides a console, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) or [Webstorm](https://www.jetbrains.com/webstorm).
+
+To build your package:
+1. In the console, type the following commands, each command followed by the **Enter** key.
+   1. `gulp clean`
+   1. `gulp build`
+   1. `gulp bundle --ship`
+   1. `gulp package-solution --ship`
 
