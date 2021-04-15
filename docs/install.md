@@ -8,7 +8,7 @@ _Note:_ To complete the installation, you must have SharePoint Admin Centre priv
 Before you can install the app, you must first either:
    - Download the ready-made package from the [nwc-solution-starter repository](https://github.com/nintexplatform/nwc-solution-starter).
    - [Build](./build.md) your cusomized package and find it in the **/sharepoint/solution** folder.
-     - _Note:_ If you are not using the default URL for the app catalog of "/sites/appcatalog/" you will need to [build](.build.md) a customized package that references your sites catalog location.
+     - _Note:_ If you are not using the default URL for the app catalog of "/sites/appcatalog/" you will need to [build](./build.md) a customized package that references your sites catalog location.
 
 ## Step 2: Install the package in SharePoint
 In your SharePoint environment:
