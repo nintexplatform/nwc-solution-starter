@@ -1,3 +1,26 @@
+# Nintex Solution Starter for SharePoint
+
+The Nintex solution Starter is a web part components that will enable you to extend your Nintex Workflow Cloud forms and tasks into a SharePoint 2016, SharePoint 2019, or SharePoint Online environment. Through the self-contained web part solution, SharePoint administrators can add the web parts to any SharePoint Online tenant or on-premises SharePoint farm with minimal effort, and expose My Nintex content directly to SharePoint users. 
+Designed using the Nintex Workflow Cloud public developer API, this Solution Starter can also be customized or expanded on to meet the individual customers different use cases. 
+
+# Overview
+
+This documentation will guide you through building and installing the Nintex Solution Starter in SharePoint Online, or SharePoint on-premesis, as well as making some simple customization.
+
+To get started, you should first build and install the basic solution package, and add the web part to a page:
+1. [Build the app](./build.md).
+1. [Install the app in your SharePoint environment](./install.md).
+1. [Add the web part to a page](./addToPage.md).
+
+Once you have successfully installed and added the web part, you may want to customize the columns and fields. See the [basic customisation guidelines](./customize.md).
+
+Then, there are some more specific guides on how to:  
+  - [Change a column heading or size](./columnsRenameResize.md).
+  - [Change the order of the columns](./columnsReorder.md).
+  - [Add or remove a column](./columnsAddRemove.md).
+
+
+
 # nwc-tasks-forms
 
 ## Development ;
