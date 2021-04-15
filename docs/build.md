@@ -101,7 +101,7 @@ To build your package:
    1. `gulp package-solution --ship`
 
 
-## Configure your package for SharePoint Online only
+# Configure your package for SharePoint Online only
 If you are only using SharePoint online, you can configure the package to bundle all required files into one upload to make your installation process much simpler.
 
 _Note:_ If you need to support both SharePoint Online and SharePoint on-premesis, you must use the standard build instructions above.
