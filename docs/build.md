@@ -93,8 +93,10 @@ To build your package:
    1. `gulp build`
    1. `gulp bundle --ship`
    1. `gulp package-solution --ship`
-
-
+ 
+<br/>
+<br/>
+<br/>
 
 # SharePoint Online Only
 1. Add your developer details.
@@ -124,7 +126,6 @@ Before you build your package, add the details of your privacy policy, terms of 
     },
    ```
 2. Add your details inside the quotation marks for each field described below, and save the file.
-
    
 |Field|Description|
 |-----|-----------|
@@ -135,7 +136,7 @@ Before you build your package, add the details of your privacy policy, terms of 
 |mpnId|Your Microsoft Partner Network ID.|
 
 
-## Configure package for SharePoint Online Only:
+## Configure package for SharePoint Online only:
   - Update Node version.
   - Configure the package to use more recent frameworks, libraries.
   - Retrieve the additional files that would normally be uploaded to a CDN.
