@@ -71,7 +71,7 @@ In your SharePoint environment:
     ```javascript	
     {
       "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/write-manifests.schema.json",
-      "cdnBasePath": "/sites/apps/CDN/nwctasksforms"`
+      "cdnBasePath": "/sites/apps/CDN/nwctasksforms"
     }
     ```
 1. Save and close the file.
@@ -154,6 +154,7 @@ Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
 		"name": "Nintex Solution Starter - NWC Tasks and Forms",
 		"id": "4cc1a9b3-bbe0-4db5-b97f-433c5562b052",
 		"version": "1.0.0.0",
+    "includeClientSideAssets": true,
     "developer": {
       "name": "",
       "websiteUrl": "",
@@ -163,9 +164,8 @@ Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
     }
 	  },
 	  "paths": {
-		"zippedPackage": "solution/nwc-tasks-forms.sppkg"
-	  },
-	  "includeClientSideAssets": true`
+		  "zippedPackage": "solution/nwc-tasks-forms.sppkg"
+	  }
 	}
 	```
 
@@ -179,7 +179,7 @@ Because you have configured the package to contain all JSON and javascript, you 
     ```javascript	
     {
       "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/write-manifests.schema.json",
-      "cdnBasePath": "<!-- PATH TO CDN -->"`
+      "cdnBasePath": "<!-- PATH TO CDN -->"
     }
     ```
 
