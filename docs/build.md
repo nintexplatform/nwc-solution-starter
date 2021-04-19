@@ -147,27 +147,27 @@ Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
 1. Open the **package-solution.json** file in the **/config** folder of the repository.
 1. Add the following line: `"includeClientSideAssets": true`.
 
-   ```javascript  
-	{
-	  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
-	  "solution": {
-		"name": "Nintex Solution Starter - NWC Tasks and Forms",
-		"id": "4cc1a9b3-bbe0-4db5-b97f-433c5562b052",
-		"version": "1.0.0.0",
-    "includeClientSideAssets": true,
-    "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
-      "mpnId": ""
+  ```javascript  
+  {
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+      "name": "Nintex Solution Starter - NWC Tasks and Forms",
+      "id": "4cc1a9b3-bbe0-4db5-b97f-433c5562b052",
+      "version": "1.0.0.0",
+      "includeClientSideAssets": true,
+      "developer": {
+        "name": "",
+        "websiteUrl": "",
+        "privacyUrl": "",
+        "termsOfUseUrl": "",
+        "mpnId": ""
+      }
+    },
+    "paths": {
+      "zippedPackage": "solution/nwc-tasks-forms.sppkg"
     }
-	  },
-	  "paths": {
-		  "zippedPackage": "solution/nwc-tasks-forms.sppkg"
-	  }
-	}
-	```
+  }
+```
 
 ### Reset the CDN path
 Because you have configured the package to contain all JSON and javascript, you can remove the CDN.
@@ -188,10 +188,11 @@ Once you have prepared your manifest file, you can build the package.
 
 We recommend using a code editor that provides a console, such as [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) or [Webstorm](https://www.jetbrains.com/webstorm).
 
-To build your package:
-1. In the console, type the following commands, each command followed by the **Enter** key.
-   1. `gulp clean`
-   1. `gulp build`
-   1. `gulp bundle --ship`
-   1. `gulp package-solution --ship`
+To build your package in the console, type the following commands, each command followed by the **Enter** key.
+
+- `gulp clean`
+- `gulp build`
+  -  Note: Depending on your version of gulp you may need to update to the latest version by using `gulp --upgrade` and then remove `"no-use-before-declare": true` from the `tslint.json` file before running `gulp build` again. 
+- `gulp bundle --ship`
+- `gulp package-solution --ship`
 
