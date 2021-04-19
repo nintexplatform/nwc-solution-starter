@@ -101,6 +101,7 @@ To build your package:
    1. `gulp package-solution --ship`
 
 
+
 # Configure your package for SharePoint Online only
 If you are only using SharePoint online, you can configure the package to bundle all required files into one upload to make your installation process much simpler.
 
@@ -152,7 +153,14 @@ Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
 	  "solution": {
 		"name": "Nintex Solution Starter - NWC Tasks and Forms",
 		"id": "4cc1a9b3-bbe0-4db5-b97f-433c5562b052",
-		"version": "1.0.0.17"
+		"version": "1.0.0.0",
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    }
 	  },
 	  "paths": {
 		"zippedPackage": "solution/nwc-tasks-forms.sppkg"
