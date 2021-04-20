@@ -8,7 +8,7 @@ _Note:_ If the Nintex Solution Starter is not deployed to all sites, you will fi
 Your Nintex ClientID will be used in the configuration of the web part once it is installed. The ClientID is used to authenticate your SharePoint environment with Nintex Workflow Cloud, and enables your users to be able to access the web part with their Nintex Workflow Cloud credentials. If your users do not yet have access to your Nintex Workflow Cloud tenant, you can learn more about how to add them within the [Nintex Workflow Cloud product documentation](https://help.nintex.com/en-US/nwc/Content/Settings/UserManagement.htm).
 
 To retrieve your Nintex ClientID
-1. Complete the **[request form]** with your SharePoint information.
+1. Complete the **[request form](https://salesops.workflowcloud.com/forms/cf236d71-22cb-4b4b-a3cb-652c345bff8a)** with your SharePoint information.
 1. You will recieve an email with your new ClientID.
 
 Your ClientID can be used in any web part installed in your environment. 
