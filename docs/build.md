@@ -9,39 +9,10 @@ There are two ways you can configure and deploy your package:
 
 
 # SharePoint On-Premises and SharePoint Online
-1. Add your developer details.
 1. Configure your App Catalog location.
 1. Build your package.
 1. Install your package **and upload the additional supporting files**. See [Install your package](./install.md).
 
-## Add your developer details
-Before you build your package, add the details of your privacy policy, terms of use, and Microsoft Partner Network Id to the package details.
-
-1. In the project  you have downloaded from the repository, navigate to the **/config** folder.
-1. Open the **package-solution.json** file.
-2. Look for the section that starts with `"developer"`.
-   
-   If it's not there, copy and paste the below code before the `"paths"` section:
-   
-   ```javascript
-   "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
-      "mpnId": ""
-    },
-   ```
-2. Add your details inside the quotation marks for each field described below, and save the file.
-
-   
-|Field|Description|
-|-----|-----------|
-|name|Your organization or developer's name.|
-|websiteUrl|The organization website. |
-|privacyUrl|The URL of your privacy policy for users of your SharePoint app.|
-|termsOfUseUrl|The URL of your terms of use for users of your SharePoint app.|
-|mpnId|Your Microsoft Partner Network ID.|
 
 ## Configure the App Catalog location
 
