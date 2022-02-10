@@ -3,7 +3,7 @@
 There are two ways you can configure and deploy your package:
 
   - [Support both SharePoint Online and SharePoint on-premises](https://github.com/nintexplatform/nwc-solution-starter/blob/main/docs/build.md#SharePoint-On-Premises-and-SharePoint-Online)
-    - This requires using an older version of the SharePoint Framework to support SharePoint 2016  
+    - This requires using an older version of the SharePoint Framework to support SharePoint 2016
   - [Support SharePoint Online only](https://github.com/nintexplatform/nwc-solution-starter/blob/main/docs/build.md#sharepoint-online-only)
     - If you are only using SharePoint online, you can configure the package to bundle all required files into one upload to make your installation process much simpler.
 
@@ -31,9 +31,9 @@ In your SharePoint environment:
 1. Select the **appcatalogue** part of the value: "/sites/`appcatalog`/CDN/nwctasksforms".
 1. Paste the URL-part you copied earlier.
 
-   For example, if your App Catalogue location was **apps**:  
+   For example, if your App Catalogue location was **apps**:
 
-    ```javascript	
+    ```javascript
     {
       "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/write-manifests.schema.json",
       "cdnBasePath": "/sites/apps/CDN/nwctasksforms"
@@ -54,7 +54,7 @@ When debugging the package for the first time, you must first create and trust a
    1. `gulp trust-dev-cert`
    1. `set NODE_NO_HTTP2=1 && gulp serve`
 
-You only need to run these commands once. 
+You only need to run these commands once.
 
 For more help getting started building and debugging SharePoint packages, see [Microsoft SharePoint developer tutorials](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment).
 
@@ -64,7 +64,7 @@ To build your package:
    1. `gulp build`
    1. `gulp bundle --ship`
    1. `gulp package-solution --ship`
- 
+
 <br/>
 <br/>
 <br/>
@@ -84,9 +84,9 @@ Before you build your package, add the details of your privacy policy, terms of 
 1. In the project  you have downloaded from the repository, navigate to the **/config** folder.
 1. Open the **package-solution.json** file.
 2. Look for the section that starts with `"developer"`.
-   
-   If it's not there, copy and paste the below code before the `"paths"` section:
-   
+
+   If it's not there, copy and paste the below JSON below the `"version"`:
+
    ```javascript
    "developer": {
       "name": "",
@@ -94,10 +94,10 @@ Before you build your package, add the details of your privacy policy, terms of 
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    },
+    }
    ```
 2. Add your details inside the quotation marks for each field described below, and save the file.
-   
+
 |Field|Description|
 |-----|-----------|
 |name|Your organization or developer's name.|
@@ -108,15 +108,15 @@ Before you build your package, add the details of your privacy policy, terms of 
 
 
 ## Configure package for SharePoint Online only:
-  - Update Node version.
+  - Update Node version to v14.
   - Configure the package to use more recent frameworks, libraries.
-  - Retrieve the additional files that would normally be uploaded to a CDN.
   - Configure the package to combine all JSON and javascript files into the package rather than using a CDN.
   - Remove the CDN path from the configuration.
-  
-### Switch your version of Node to v10
-Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v10.
 
+### Switch your version of Node to v14
+Using NVM or NODIST (or 'n' if you are developing on a Mac), switch to Node v14.
+
+[Refer to the SPFX guidelines for development tools](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/compatibility)
 
 ### Update frameworks and libraries
 The package for SharePoint Online can make use of more recent versions of frameworks and libraries.
@@ -124,24 +124,25 @@ The package for SharePoint Online can make use of more recent versions of framew
 1. Find and update the following `@microsoft` values:
 
 	```javascript
-		"@microsoft/sp-core-library": "~1.11.0.0",
-		"@microsoft/sp-lodash-subset": "~1.11.0.0",
-		"@microsoft/sp-webpart-base": "~1.11.0.0",
+		"@microsoft/sp-core-library": "~1.11.0",
+		"@microsoft/sp-lodash-subset": "~1.11.0",
+		"@microsoft/sp-webpart-base": "~1.11.0",
 	```
 1. Find and update the following `react` values:
 
-	```javascript	
-		"react": "15.4.2",               
-		"react-dom": "15.4.2"        
+	```javascript
+		"react": "15.4.2",
+		"react-dom": "15.4.2"
 	```
-
 
 ### Retrieve the content to be combined into the package
 1. In the console, type the following commands, each command followed by the **Enter** key.
    1. `npm i`
-   2. `npm audit fix`
-   3. `npm i @microsoft/sp-tslint-rules`
-   4. `npm i @microsoft/rush-stack-compiler-3.2`
+   2. `npm i gulp@^4.0.2`
+   3. `npm i @microsoft/rush-stack-compiler-3.2`
+   4. `npm audit fix`
+   5. `npm i @microsoft/sp-tslint-rules`
+   4. `npm i tslint-microsoft-contrib`
 
 
 ### Configure the package to combine all JSON and javascript
@@ -149,7 +150,9 @@ The package for SharePoint Online can make use of more recent versions of framew
 1. Open the **package-solution.json** file in the **/config** folder of the repository.
 1. Add the following line: `"includeClientSideAssets": true`.
 
-  ```javascript  
+This can be seen below, after `"version"`:
+
+  ```javascript
   {
     "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
     "solution": {
@@ -178,7 +181,7 @@ Because you have configured the package to contain all JSON and javascript, you 
 1. Find the line that starts with `"cdnBasePath"`.
 1. Change the value to `"<!-- PATH TO CDN -->"`.
 
-    ```javascript	
+    ```javascript
     {
       "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/write-manifests.schema.json",
       "cdnBasePath": "<!-- PATH TO CDN -->"
@@ -194,7 +197,6 @@ To build your package in the console, type the following commands, each command 
 
 - `gulp clean`
 - `gulp build`
-  -  Note: Depending on your version of gulp you may need to update to the latest version by using `gulp --upgrade` and then remove `"no-use-before-declare": true` from the `tslint.json` file before running `gulp build` again. 
+  -  Note: Depending on your version of gulp you may need to update to the latest version by using `gulp --upgrade` and then remove `"no-use-before-declare": true` from the `tslint.json` file before running `gulp build` again.
 - `gulp bundle --ship`
 - `gulp package-solution --ship`
-
