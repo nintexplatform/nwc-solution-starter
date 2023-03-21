@@ -6,7 +6,7 @@ For more information on adding new columns, see [Add and remove columns](./colum
 
 For more information on where to find the column definitions and where to cuztomize your columns, see [Customizing your columns](./customize.md).
 
-_Note:_ These data models are based on the repository code's inbuilt calls to the [Nintex Workflow Cloud API](https://developer.nintex.com).
+_Note:_ These data models are based on the repository code's inbuilt calls to the [Nintex Automation Cloud API](https://developer.nintex.com).
 You can retrieve more or different data by customizing these calls or creating your own.
 
 ## Tasks
