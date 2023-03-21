@@ -5,7 +5,7 @@ _Note:_ If the Nintex Solution Starter is not deployed to all sites, you will fi
 
 
 ## Retrieve your Nintex ClientID
-Your Nintex ClientID will be used in the configuration of the web part once it is installed. The ClientID is used to authenticate your SharePoint environment with Nintex Workflow Cloud, and enables your users to be able to access the web part with their Nintex Workflow Cloud credentials. If your users do not yet have access to your Nintex Workflow Cloud tenant, you can learn more about how to add them within the [Nintex Workflow Cloud product documentation](https://help.nintex.com/en-US/nwc/Content/Settings/UserManagement.htm).
+Your Nintex ClientID will be used in the configuration of the web part once it is installed. The ClientID is used to authenticate your SharePoint environment with Nintex Automation Cloud, and enables your users to be able to access the web part with their Nintex Automation Cloud credentials. If your users do not yet have access to your Nintex Automation Cloud tenant, you can learn more about how to add them within the [Nintex Automation Cloud product documentation](https://help.nintex.com/en-US/nwc/Content/Settings/UserManagement.htm).
 
 To retrieve your Nintex ClientID
 1. Complete the **[request form](https://salesops.workflowcloud.com/forms/cf236d71-22cb-4b4b-a3cb-652c345bff8a)** with your SharePoint information.
@@ -34,7 +34,7 @@ To add the app to your site:
 1. Click the **Edit** button to configure the web part.
 1. Type the name of your tenant into the **Tenant name** field.
 
-   Your tenant name is the name that appears at the start of your Nintex Workflow Cloud URL.  
+   Your tenant name is the name that appears at the start of your Nintex Automation Cloud URL.  
    Only type the tenant name, not the full URL.  
    For example, if your tenant URL is `acme.workflowcloud.com`, type `acme`.
 1. Add your ClientID into the **ClientID** field.
@@ -42,6 +42,6 @@ To add the app to your site:
    If you do not know ClientID, see _Retrieve your Nintex ClientID_
  
 1. Click **Republish** to save and publish the page.
-1. If you are not currently signed into Nintex Workflow Cloud, a popup requests you to sign in and authorize the connection.
+1. If you are not currently signed into Nintex Automation Cloud, a popup requests you to sign in and authorize the connection.
 
    Once configured, the web part displays the user's forms and tasks.
