@@ -1,7 +1,7 @@
 # Nintex Solution Starter for SharePoint
 
-The Nintex Solution Starter is a web part component that will enable you to extend your Nintex Workflow Cloud forms and tasks into a SharePoint 2016, SharePoint 2019, or SharePoint Online environment. Through the self-contained web part solution, SharePoint administrators can add the web parts to any SharePoint Online tenant or on-premises SharePoint farm with minimal effort, and expose My Nintex content directly to SharePoint users. 
-Designed using the Nintex Workflow Cloud public developer API, this Solution Starter can also be customized or expanded on to meet the individual customers different use cases. 
+The Nintex Solution Starter is a web part component that will enable you to extend your Nintex Automation Cloud forms and tasks into a SharePoint 2016, SharePoint 2019, or SharePoint Online environment. Through the self-contained web part solution, SharePoint administrators can add the web parts to any SharePoint Online tenant or on-premises SharePoint farm with minimal effort, and expose My Nintex content directly to SharePoint users. 
+Designed using the Nintex Automation Cloud public developer API, this Solution Starter can also be customized or expanded on to meet the individual customers different use cases. 
 
 # Overview
 
