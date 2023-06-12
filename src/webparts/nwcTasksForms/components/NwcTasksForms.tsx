@@ -57,7 +57,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       {
         key: 'column3',
         name: 'Workflow name',
-        fieldName: 'workflow',
+        fieldName: 'workflowName',
         minWidth: 150,
         maxWidth: 200,
         isRowHeader: true,
@@ -93,7 +93,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       {
         key: 'column5',
         name: 'Date created',
-        fieldName: 'created',
+        fieldName: 'createdDate',
         minWidth: 210,
         maxWidth: 350,
         isRowHeader: true,
@@ -102,8 +102,8 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         isSortedDescending: false,
         data: 'date',
         onRender: (item) => {
-          if (item.created) {
-            return <span>{getFormattedLocalDateTime(item.created)}</span>;
+          if (item.createdDate) {
+            return <span>{getFormattedLocalDateTime(item.createdDate)}</span>;
           } else {
             return <span></span>;
           }
@@ -133,7 +133,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       {
         key: 'column7',
         name: 'Task form',
-        fieldName: 'urls',
+        fieldName: 'taskAssignments',
         minWidth: 150,
         maxWidth: 200,
         isRowHeader: true,
@@ -142,8 +142,11 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         isSortedDescending: false,
         data: 'string',
         onRender: (item) => {
-          if ((item.urls) && (item.urls.formUrl)) {
-            return <a target='_blank' href={item.urls.formUrl}>View Task Form</a>;
+          if (item.taskAssignments) {
+            var task = item.taskAssignments[0];
+            if ((task.urls) && (task.urls.formUrl)) {
+              return <a target='_blank' href={task.urls.formUrl}>View Task Form</a>;
+            }
           }
         },
         onColumnClick: this._onTasksColumnClick
@@ -301,7 +304,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       const idToken: IdToken = await this.auth0.getIdTokenClaims();
 
       // https://developer.nintex.com/reference#get-tasks
-      let tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v1/tasks';
+      let tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v2/tasks';
       tasksUrl += '?status=active';
 
       fetch(tasksUrl, {
@@ -545,7 +548,7 @@ function _sampleForms(): INintexForm[] {
       'name': 'TEST - Claim request',
       'description': 'Claim request for electronics',
       'urls': {
-        'formUrl': 'https://madhax.workflowcloud-test.com/forms/09858968-3eae-43a7-8a4f-060958a693a5'
+        'formUrl': 'https://tenantname.workflowcloud.com/forms/09858968-3eae-43a7-8a4f-060958a693a5'
       },
       'favourite': false
     },
@@ -557,7 +560,7 @@ function _sampleForms(): INintexForm[] {
       'name': 'SAMPLE - auth form -test lito',
       'description': 'another test with clashing name',
       'urls': {
-        'formUrl': 'https://madhax.workflowcloud-test.com/forms/e70e8cdb-60e1-470a-9e91-a79982f434cf'
+        'formUrl': 'https://tenantname.workflowcloud.com/forms/e70e8cdb-60e1-470a-9e91-a79982f434cf'
       },
       'favourite': false
     },
@@ -568,7 +571,7 @@ function _sampleForms(): INintexForm[] {
       },
       'name': 'JUNK - Auth form -test lito',
       'urls': {
-        'formUrl': 'https://madhax.workflowcloud-test.com/forms/e222e319-500b-41c5-8ffd-8801f187c256'
+        'formUrl': 'https://tenantname.workflowcloud.com/forms/e222e319-500b-41c5-8ffd-8801f187c256'
       },
       'favourite': false
     }
@@ -579,39 +582,22 @@ function _sampleForms(): INintexForm[] {
 function _sampleTasks(): INintexTask[] {
   return [
     {
-      'id': '09858968-3eae-43a7-8a4f-060958a693a5',
-      'name': 'Claim request',
-      'description': 'Claim request for electronics',
-      'workflow': 'aaaaa',
-      'status': 'XYZ'
-    },
-    {
-      'id': 'e70e8cdb-60e1-470a-9e91-a79982f434cf',
-      'name': 'Again test lito',
-      'description': 'Another test with clashing name',
-      'workflow': 'ccccc',
-      'status': 'ABC'
-    },
-    {
-      'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
-      'name': 'Auth test lito',
-      'description': 'What about this one',
-      'workflow': 'bbbbbb',
-      'status': 'LMNOP'
-    },
-    {
-      'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
-      'name': 'Extra form -test lito',
-      'description': 'Extra this one',
-      'workflow': 'bbbbbb',
-      'status': 'LMNOP'
-    },
-    {
-      'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
-      'name': 'Form3 -test lito',
-      'description': 'Form3 about this one',
-      'workflow': 'ddddd',
-      'status': 'QWERT'
+      'id': '86383988744140750c2cb7aff467-42bb-99b6-55ac41b5fd19',
+      'name': 'Review Monthly Expenses',
+      'description': 'Review the expenses submitted for this month',
+      'workflowName': 'Expense claim workflow',
+      'status': 'active',
+      'createdDate': '2021-09-12T03:51:11.211Z',
+      'dueDate': '2021-09-21T13:06:25.911Z',
+      taskAssignments: [
+        {
+          "status": "active",
+          "assignee": "chris.oconnor@kachihro.com",
+          "urls": {
+              "formUrl": "https://tenantname.workflowcloud.com/task-forms/a8240c5c-1c80-5422-abd4-ade82bf5949d_5466bc56-dafa-5151-a87e-ebf2ccf4d4db"
+          }
+        }
+      ]
     }
   ];
 
