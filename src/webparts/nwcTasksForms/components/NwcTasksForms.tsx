@@ -543,10 +543,11 @@ function _sampleForms(): INintexForm[] {
     {
       'id': '09858968-3eae-43a7-8a4f-060958a693a5',
       'workflow': {
-        'name': 'Tom form Test 2'
+        'name': 'Leave Request'
       },
-      'name': 'TEST - Claim request',
-      'description': 'Claim request for electronics',
+      'name': 'Leave Request',
+      'lastModified': '2021-09-12T03:51:11.211Z',
+      'description': 'Vacation and Sick Leave',
       'urls': {
         'formUrl': 'https://tenantname.workflowcloud.com/forms/09858968-3eae-43a7-8a4f-060958a693a5'
       },
@@ -555,23 +556,13 @@ function _sampleForms(): INintexForm[] {
     {
       'id': 'e70e8cdb-60e1-470a-9e91-a79982f434cf',
       'workflow': {
-        'name': 'auth form -test lito 02'
+        'name': 'Expense Claim'
       },
-      'name': 'SAMPLE - auth form -test lito',
-      'description': 'another test with clashing name',
+      'name': 'Expense Claim',
+      'lastModified': '2021-09-08T08:51:11.211Z',
+      'description': 'Reimbursements for employee spending',
       'urls': {
         'formUrl': 'https://tenantname.workflowcloud.com/forms/e70e8cdb-60e1-470a-9e91-a79982f434cf'
-      },
-      'favourite': false
-    },
-    {
-      'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
-      'workflow': {
-        'name': 'Auth form -test lito'
-      },
-      'name': 'JUNK - Auth form -test lito',
-      'urls': {
-        'formUrl': 'https://tenantname.workflowcloud.com/forms/e222e319-500b-41c5-8ffd-8801f187c256'
       },
       'favourite': false
     }
@@ -592,7 +583,7 @@ function _sampleTasks(): INintexTask[] {
       taskAssignments: [
         {
           "status": "active",
-          "assignee": "chris.oconnor@kachihro.com",
+          "assignee": "first.lastName@myCompany.com.au",
           "urls": {
               "formUrl": "https://tenantname.workflowcloud.com/task-forms/a8240c5c-1c80-5422-abd4-ade82bf5949d_5466bc56-dafa-5151-a87e-ebf2ccf4d4db"
           }
