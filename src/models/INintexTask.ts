@@ -1,20 +1,20 @@
-import { INintexUrls } from './INintexUrls';
+import { INintexTaskAssignment } from './INintexTaskAssignment';
 
 export interface INintexTask {
-    actionInstanceId?: string;
-    assignTo?: string;
-    assignees?: string[];
-    created?: string;
-    description?: string;
-    dueDate?: string;
-    id: string;
-    message?: string;
-    name?: string;
-    outcomes?: string[];
-    status?: string;
-    subject?: string;
-    workflow?: string;
-    workflowId?: string;
-    workflowInstanceId?: string;
-    urls?: INintexUrls;
+  actionInstanceId?: string;
+  assignTo?: string;
+  assignees?: string[];
+  createdDate?: string;
+  description?: string;
+  dueDate?: string;
+  id: string;
+  message?: string;
+  name?: string;
+  outcomes?: string[];
+  status?: string;
+  subject?: string;
+  workflowName?: string;
+  workflowId?: string;
+  workflowInstanceId?: string;
+  taskAssignments: INintexTaskAssignment[];
 }
