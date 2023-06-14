@@ -25,10 +25,10 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.14.0",
     "@microsoft/rush-stack-compiler-3.2": "^0.12.0",
-**    "@microsoft/sp-core-library": "~1.11.0",
+    "@microsoft/sp-core-library": "~1.11.0",
     "@microsoft/sp-lodash-subset": "~1.11.0",
     "@microsoft/sp-webpart-base": "~1.11.0",
-**    "@microsoft/sp-office-ui-fabric-core": "~1.4.0-0",
+    "@microsoft/sp-office-ui-fabric-core": "~1.4.0-0",
     "office-ui-fabric-react": "^2.31.0",
   },
   "devDependencies": {
@@ -37,9 +37,9 @@
     "@types/react-addons-shallow-compare": "0.14.17",
     "@types/react-addons-update": "0.14.14",
     "@types/react-addons-test-utils": "0.14.15",
-**    "@microsoft/sp-build-web": "~1.11.0",
+    "@microsoft/sp-build-web": "~1.11.0",
     "@microsoft/sp-module-interfaces": "~1.11.0",
-    "@microsoft/sp-webpart-workbench": "~1.11.0",**
+    "@microsoft/sp-webpart-workbench": "~1.11.0",
     "gulp": "~3.9.1",
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
