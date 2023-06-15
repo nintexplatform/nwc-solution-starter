@@ -309,7 +309,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       startdate = startdate.subtract(90, "days");
 
       // format for REST call to Tasks
-      var fromDate = startdate.format("YYYY-MM-YYT00:00:00Z");
+      var fromDate = startdate.format("YYYY-MM-YYT00:00:00");
 
       // https://developer.nintex.com/docs/nc-api-docs/9dedadb170913-list-tasks
       let tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v2/tasks';
