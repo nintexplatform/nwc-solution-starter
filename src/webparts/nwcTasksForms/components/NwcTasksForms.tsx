@@ -19,6 +19,7 @@ import { INintexTask } from '../../../models/INintexTask';
 import { INintexForm } from '../../../models/INintexForm';
 import createAuth0Client, { Auth0Client, IdToken } from '@auth0/auth0-spa-js';
 import { AppSettings } from '../../../AppSettings';
+import moment = require('moment');
 
 export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, INwcTasksFormsState> {
 
@@ -303,9 +304,19 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       const token: string = await this.auth0.getTokenSilently();
       const idToken: IdToken = await this.auth0.getIdTokenClaims();
 
-      // https://developer.nintex.com/reference#get-tasks
+      // startDate, 90 days before TODAY
+      var startdate = moment();
+      startdate = startdate.subtract(90, "days");
+
+      // format for REST call to Tasks
+      var fromDate = startdate.format("YYYY-MM-YYT00:00:00Z");
+
+      // https://developer.nintex.com/docs/nc-api-docs/9dedadb170913-list-tasks
       let tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v2/tasks';
       tasksUrl += '?status=active';
+      tasksUrl += '&from=' + fromDate;
+
+      console.log(tasksUrl);
 
       fetch(tasksUrl, {
         method: 'GET',
@@ -357,9 +368,10 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       const token: string = await this.auth0.getTokenSilently();
       const idToken: IdToken = await this.auth0.getIdTokenClaims();
 
-      const tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v1/forms';
+      const formsUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v1/forms';
+      console.log(formsUrl);
 
-      fetch(tasksUrl, {
+      fetch(formsUrl, {
         method: 'GET',
         credentials: 'same-origin',
         headers: {
